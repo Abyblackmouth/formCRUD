@@ -31,6 +31,7 @@ button.addEventListener('click', ()=>{
     console.log(persona)
 
     createData( persona )
+    getData()
 
 })
 
@@ -45,3 +46,27 @@ const createData = async ( persona )=>{
     })
     
 }
+
+const getData = async() => {
+    const response = await fetch('https://persona-bfd85-default-rtdb.firebaseio.com/.json', {
+        method: 'GET',
+    });
+    const data = await response.json();
+
+    const array = Object.entries(data);
+
+    const parseData = array.map((item) => {
+        const object = {
+            id: item[0],
+            avatar: item[1].avatar,
+            name: item[1].name,
+            lastName: item[1].lastName,
+            birthdate: item[1].birthdate,
+            gender: item[1].gender,
+            country: item[1].country,
+            description: item[1].description,
+        };
+        console.log(object)
+    });
+    return parseData;
+};
