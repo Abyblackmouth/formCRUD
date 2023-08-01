@@ -1,0 +1,57 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+form {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type='text'], input[type="date"], textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: 16px;
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: rgb(46, 46, 255);
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+button:hover{
+    background-color: forestgreen;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+

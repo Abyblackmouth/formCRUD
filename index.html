@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crear Persona</h1>
+    <form>
+        <label for="avatar">Avatar:</label>
+        <input type="text" id="avatar" name="avatar" required>
+
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="lastName">Apellido</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="birthdate">Fecha de nacimiento:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        <label for="gender">Genero</label>
+        <input type="text" id="gender" name="gender" required>
+
+        <label for="country">Pais:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="description">Descripcion:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+        <span id="error-message" class="error-message"></span>
+
+        <button type="submit" id="send">Enviar</button>
+
+    </form>
+    
+</body>
+<script src="./createPerson.js"></script>
+</html>
