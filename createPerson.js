@@ -132,7 +132,6 @@ const getData = async() => {
         }
         card(object)
     }); 
-/*     return parseData; */
 };
 
 const cleanerList = () =>{
