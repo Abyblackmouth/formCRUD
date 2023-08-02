@@ -92,16 +92,21 @@ const getData = async() => {
             buttonEdit.classList.add('buttonEdit')
             buttonDelete.classList.add('buttonDelete')
 
-            buttonEdit.addEventListener('click', ()=>{
+            buttonEdit.id = character.id    
+            buttonDelete.id = character.id
+
+            buttonEdit.addEventListener('click', ( event )=>{
                 console.log('aqui se edita')
+                window.location.href = 'http://127.0.0.1:5501/card.html' + '?id=' + event.target.id
+
             })
 
-            buttonDelete.addEventListener('click', ()=>{
-                console.log('aqui se borra')
+            buttonDelete.addEventListener('click', (event)=>{
+                console.log(event)
+                deleteData(event.target.id)
+           
             })
 
-
-        
             img.src = character.avatar
             img.width = 250
             infoName.textContent = character.name
@@ -123,8 +128,6 @@ const getData = async() => {
             buttonUserContainer.appendChild(buttonEdit)
             buttonUserContainer.appendChild(buttonDelete)
 
-
-        
             document.body.appendChild(container)
         }
         card(object)
@@ -141,6 +144,25 @@ const cleanerList = () =>{
 }
 
 getData()
+
+
+const deleteData = async(id) =>
+{
+    const response = await fetch(`https://persona-bfd85-default-rtdb.firebaseio.com/${id}.json`, 
+    {
+        method: "DELETE",
+        headers:{
+            "Content-type": "application/json;charset=UTF-8"
+        },
+        body: JSON.stringify({}),
+    });
+     
+    if ( response.status = 200 ){
+        cleanerList()
+        getData()
+    }
+
+};
 
 
 
