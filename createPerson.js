@@ -31,8 +31,6 @@ button.addEventListener('click', ()=>{
     console.log(persona)
 
     createData( persona )
-    getData()
-
 })
 
 
@@ -44,6 +42,11 @@ const createData = async ( persona )=>{
         },
         body: JSON.stringify(persona)
     })
+    if ( response.status = 200 ){
+        cleanerList()
+        getData()
+
+    }
     
 }
 
@@ -67,6 +70,57 @@ const getData = async() => {
             description: item[1].description,
         };
         console.log(object)
-    });
-    return parseData;
+
+        const card = ( character ) =>{
+            const container = document.createElement('div')
+            const img = document.createElement('img')
+            const info = document.createElement('div')
+        
+            const infoName = document.createElement('h2')
+            const infoLastName = document.createElement('h3')
+            const infoBirthdate = document.createElement('h3')
+            const infoGender = document.createElement('h3')
+            const infoCountry = document.createElement('h3')
+            const infoDescription = document.createElement('h3')
+        
+            container.classList.add( 'card__container')
+            info.classList.add( 'card__info')
+        
+            img.src = character.avatar
+            img.width = 250
+            infoName.textContent = character.name
+            infoLastName.textContent = character.lastName
+            infoBirthdate.textContent = character.birthdate
+            infoGender.textContent = character.gender
+            infoCountry.textContent = character.country
+            infoDescription.textContent = character.description
+        
+            container.appendChild(img)
+            container.appendChild(info)
+            info.appendChild(infoName)
+            info.appendChild(infoLastName)
+            info.appendChild(infoBirthdate)
+            info.appendChild(infoGender)
+            info.appendChild(infoCountry)
+            infoCountry.appendChild(infoDescription)
+        
+            document.body.appendChild(container)
+        }
+        card(object)
+    }); 
+/*     return parseData; */
 };
+
+const cleanerList = () =>{
+    const cardItem = document.querySelectorAll('.card__container')
+    cardItem.forEach(( element )=>{
+        element.remove()
+
+    })
+}
+
+getData()
+
+
+
+
