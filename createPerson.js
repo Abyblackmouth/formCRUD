@@ -75,6 +75,9 @@ const getData = async() => {
             const container = document.createElement('div')
             const img = document.createElement('img')
             const info = document.createElement('div')
+            const buttonUserContainer = document.createElement('div')
+            const buttonEdit = document.createElement('button')
+            const buttonDelete = document.createElement('button')
         
             const infoName = document.createElement('h2')
             const infoLastName = document.createElement('h3')
@@ -85,6 +88,19 @@ const getData = async() => {
         
             container.classList.add( 'card__container')
             info.classList.add( 'card__info')
+            buttonUserContainer.classList.add('button__container')
+            buttonEdit.classList.add('buttonEdit')
+            buttonDelete.classList.add('buttonDelete')
+
+            buttonEdit.addEventListener('click', ()=>{
+                console.log('aqui se edita')
+            })
+
+            buttonDelete.addEventListener('click', ()=>{
+                console.log('aqui se borra')
+            })
+
+
         
             img.src = character.avatar
             img.width = 250
@@ -97,12 +113,17 @@ const getData = async() => {
         
             container.appendChild(img)
             container.appendChild(info)
+            container.appendChild(buttonUserContainer)
             info.appendChild(infoName)
             info.appendChild(infoLastName)
             info.appendChild(infoBirthdate)
             info.appendChild(infoGender)
             info.appendChild(infoCountry)
-            infoCountry.appendChild(infoDescription)
+            info.appendChild(infoDescription)
+            buttonUserContainer.appendChild(buttonEdit)
+            buttonUserContainer.appendChild(buttonDelete)
+
+
         
             document.body.appendChild(container)
         }

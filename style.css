@@ -34,7 +34,7 @@ input[type='text'], input[type="date"], textarea{
     margin-bottom: 10px;
 }
 
-button{
+.buttonSend{
     background-color: rgb(46, 46, 255);
     width: 100%;
     color: #fff;
@@ -65,7 +65,7 @@ button:hover{
     box-shadow: inset;
     border-color: rgb(15, 18, 187);
     display: flex;
-    width: 600px;
+    width: 700px;
     height: 280px;
     border-radius: 6px; 
     padding: 5px;
@@ -76,6 +76,27 @@ button:hover{
 .card__info{
     margin-left: 10px;
     margin-top: 10px;
+    width: 270px;
 
 }
 
+.buttonEdit {
+    width: 160px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(84, 152, 240);
+    margin-bottom: 10px;
+}
+.buttonDelete{
+    width: 160px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+}
+
+.button__container{
+    width: 200px;
+
+}
