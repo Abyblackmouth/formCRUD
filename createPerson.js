@@ -95,6 +95,9 @@ const getData = async() => {
             buttonEdit.id = character.id    
             buttonDelete.id = character.id
 
+            buttonEdit.innerText = 'EDITAR'
+            buttonDelete.innerText = 'ELIMINAR'
+
             buttonEdit.addEventListener('click', ( event )=>{
                 console.log('aqui se edita')
                 window.location.href = 'http://127.0.0.1:5501/card.html' + '?id=' + event.target.id
